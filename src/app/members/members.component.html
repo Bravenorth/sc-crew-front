@@ -1,0 +1,10 @@
+<p>members works!</p>
+
+<button (click)="this.membersService.getMembers()">Click me sempai!</button>
+
+<a *ngFor="let member of membersService.members">
+{{member.id}}<br/>
+{{member.name}}<br/>
+{{member.email}}<br/>
+{{member.password}}<br/>
+</a>
