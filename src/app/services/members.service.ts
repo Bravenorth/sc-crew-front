@@ -28,11 +28,12 @@ export class MembersService {
     });
   }
 
-  signin() {
+  signin(username: string, password: string) {
 
+    //this.http.post();
   }
 
-  signup() {
+  signup(username: string, password: string) {
     
   }
 }

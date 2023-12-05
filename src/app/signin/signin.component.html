@@ -1,0 +1,14 @@
+<form>
+  <input type="text" name="user" placeholder="Pseudo" [(ngModel)]="username">
+  <input type="password" name="pass" placeholder="Mot de passe" [(ngModel)]="password">
+  <div>
+    <div>
+      <a >Mot de passe oublié ?</a>
+    </div>
+  </div>
+  <button (click)="signin()" type="submit">Connexion</button>
+</form>
+<p>
+  Besoin d'un compte ? -
+  <a (click)="signup()">Inscrivez-vous</a>
+</p>
