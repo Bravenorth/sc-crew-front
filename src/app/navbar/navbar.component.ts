@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MembersService } from '../services/members.service';
 import { RouterModule } from '@angular/router';
+import { InscriptionComponent } from '../inscription/inscription.component';
 
 @Component({
   selector: 'app-navbar',
