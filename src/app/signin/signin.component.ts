@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ComponentRef } from '@angular/core';
 import { MembersService } from '../services/members.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';

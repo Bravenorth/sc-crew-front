@@ -1,5 +1,6 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,8 +34,8 @@ export class MembersService {
     //this.http.post();
   }
 
-  signup(username: string, password: string) {
-    
+  signup(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(this.url + "signup", {username: username, password: password, email: email});
   }
 }
 

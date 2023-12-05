@@ -1,0 +1,21 @@
+<a (click)="openModal(signinModal)">Sign In / Sign Up</a>
+<dialog #signinModal (click)="closeModals()">
+  <div class="dialog-child" (click)="$event.stopPropagation()">
+    <app-signin></app-signin>
+    <p>
+      Besoin d'un compte ? -
+      <a (click)="openModal(signupModal)">Inscrivez-vous</a>
+    </p>
+  </div>
+</dialog>
+
+
+<dialog #signupModal (click)="closeModals()">
+  <div class="dialog-child" (click)="$event.stopPropagation()">
+    <app-signup></app-signup>
+    <p>
+      Déjà inscrit ? - 
+    <a (click)="openModal(signinModal)">Se connecter</a>
+    </p>
+  </div>
+</dialog>

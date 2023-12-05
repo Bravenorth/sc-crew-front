@@ -1,17 +1,18 @@
-<form>
+<a class="error">{{err}}</a><br/>
+<form name="signupForm">
   <input type="text" name="user" placeholder="Pseudo" [(ngModel)]="username">
   <input type="email" name="email" placeholder="Email" [(ngModel)]="email">
   <input type="password" name="pass" placeholder="Mot de passe" [(ngModel)]="password">
   <input type="password" name="pass2" placeholder="Confirmation du mot de passe" [(ngModel)]="passcheck">
   <div>
     <div>
-      <input type="checkbox" [(ngModel)]="rulesAccepted" id="rulesAccepted">
+      <input name="rulesAccepted" type="checkbox" [(ngModel)]="rulesAccepted" id="rulesAccepted">
       <label for="rulesAccepted">
         J'ai lu et j'accepte le <a routerLink="/rules">réglement</a>
       </label>
     </div>
     <div>
-      <input type="checkbox" [(ngModel)]="cookiesAccepted" id="cookiesAccepted">
+      <input name="cookiesAccepted" type="checkbox" [(ngModel)]="cookiesAccepted" id="cookiesAccepted">
       <label for="cookiesAccepted">
         J'accepte l'utilisation des cookies nécessaires à la connexion à ce site
       </label>
@@ -19,7 +20,3 @@
   </div>
   <button (click)="signup()" type="submit">Inscription</button>
 </form>
-<p>
-    Déjà inscrit ? - 
-  <a (click)="signin()">Se connecter</a>
-</p>
