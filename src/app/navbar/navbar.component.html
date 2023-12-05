@@ -7,5 +7,6 @@
     <a>Create fleet</a>
     <a>Join fleet</a>
   </div>
-  <app-signin-signup-button class="signin-signup"></app-signin-signup-button>
+  <app-signin-signup-button *ngIf="!membersService.connected" class="signin-signup"></app-signin-signup-button>
+  <app-logout *ngIf="membersService.connected" class="signin-signup"></app-logout>
 </div>

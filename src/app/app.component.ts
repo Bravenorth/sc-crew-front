@@ -17,14 +17,25 @@ export class AppComponent {
   
   constructor(private router: Router, private elemRef: ElementRef) {
     this.router.navigate(['/', 'home']);
+    ModalManager.elemRef = this.elemRef;
   }
+}
 
-  closeModal() {
-    let elems: HTMLCollection = this.elemRef.nativeElement.getElementsByTagName('dialog');
+export class ModalManager {
+
+  static elemRef: ElementRef;
+
+  static closeModals(): void {
+    let elems: HTMLCollection = ModalManager.elemRef.nativeElement.getElementsByTagName('dialog');
     for (let i = 0; i < elems.length; i++) {
       if (elems[i] instanceof HTMLDialogElement) {
         (<HTMLDialogElement>elems[i]).close();
       }
     }
+  }
+
+  static openModal(modal: HTMLDialogElement): void {
+    ModalManager.closeModals();
+    modal.showModal();
   }
 }

@@ -2,6 +2,7 @@ import { Component, ComponentRef } from '@angular/core';
 import { MembersService } from '../services/members.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ModalManager } from '../app.component';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent {
   cookiesAccepted: string = "";
   err: string = "";
 
-  constructor(public membersService: MembersService, private router: Router) {
+  constructor(public membersService: MembersService) {
     
   }
 
@@ -40,6 +41,7 @@ export class SignupComponent {
       next: (data) => {
         this.username = "";
         this.email = "";
+        ModalManager.closeModals();
         //this.alertService.set("success", "Votre compte a été créé !", 3000);
         //this.signin();
       },
@@ -50,9 +52,5 @@ export class SignupComponent {
     });
     this.password = '';
     this.passcheck = '';
-  }
-
-  signin(): void {
-    this.router.navigate(['/', 'signin']);
   }
 }

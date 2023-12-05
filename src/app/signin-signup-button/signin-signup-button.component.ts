@@ -1,6 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { SigninComponent } from '../signin/signin.component';
 import { SignupComponent } from '../signup/signup.component';
+import { AppComponent, ModalManager } from '../app.component';
 
 @Component({
   selector: 'app-signin-signup-button',
@@ -11,19 +12,13 @@ import { SignupComponent } from '../signup/signup.component';
 })
 export class SigninSignupButtonComponent {
 
-  constructor(private elemRef: ElementRef) {}
+  constructor() {}
 
   openModal(modal: HTMLDialogElement): void {
-    this.closeModals();
-    modal.showModal();
+    ModalManager.openModal(modal)
   }
 
-  closeModals(): void {
-    let elems: HTMLCollection = this.elemRef.nativeElement.getElementsByTagName('dialog');
-    for (let i = 0; i < elems.length; i++) {
-      if (elems[i] instanceof HTMLDialogElement) {
-        (<HTMLDialogElement>elems[i]).close();
-      }
-    }
+  closeModals() {
+    ModalManager.closeModals();
   }
 }

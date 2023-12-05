@@ -1,15 +1,16 @@
 import { Component, ElementRef, ViewContainerRef, importProvidersFrom } from '@angular/core';
-import { MembersService } from '../services/members.service';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { InscriptionComponent } from '../inscription/inscription.component';
+import { MembersService } from '../services/members.service';
 import { SigninComponent } from '../signin/signin.component';
 import { SignupComponent } from '../signup/signup.component';
 import { SigninSignupButtonComponent } from '../signin-signup-button/signin-signup-button.component';
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule, SigninSignupButtonComponent],
+  imports: [CommonModule, RouterModule, SigninSignupButtonComponent, LogoutComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
