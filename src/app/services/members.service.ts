@@ -27,6 +27,14 @@ export class MembersService {
       }
     });
   }
+
+  signin() {
+
+  }
+
+  signup() {
+    
+  }
 }
 
 class Member {
