@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InscriptionComponent } from '../inscription/inscription.component';
 
 @Component({
   selector: 'app-navbar',
