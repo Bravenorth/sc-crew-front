@@ -3,8 +3,8 @@
   <div class="dialog-child" (click)="$event.stopPropagation()">
     <app-signin></app-signin>
     <p>
-      Besoin d'un compte ? -
-      <a (click)="openModal(signupModal)">Inscrivez-vous</a>
+      Need an account ? -
+      <a (click)="openModal(signupModal)">Sign up !</a>
     </p>
   </div>
 </dialog>
@@ -14,8 +14,8 @@
   <div class="dialog-child" (click)="$event.stopPropagation()">
     <app-signup></app-signup>
     <p>
-      Déjà inscrit ? - 
-    <a (click)="openModal(signinModal)">Se connecter</a>
+      Already got account ? - 
+    <a (click)="openModal(signinModal)">Sign in</a>
     </p>
   </div>
 </dialog>

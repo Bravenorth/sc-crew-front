@@ -1,11 +1,11 @@
 <div class="navbar">
   <div class="icon"></div>
   <div class="buttons">
-    <a routerLink="/home">Home</a><br/>
+    <button routerLink="/home">Home</button><br/>
     <!--a routerLink="/signin">Se connecter</a><br/>
     <a routerLink="/signup">S'enregistrer</a-->
-    <a>Create fleet</a>
-    <a>Join fleet</a>
+    <button>Create fleet</button>
+    <button>Join fleet</button>
   </div>
   <app-signin-signup-button *ngIf="!membersService.connected" class="signin-signup"></app-signin-signup-button>
   <app-logout *ngIf="membersService.connected" class="signin-signup"></app-logout>
