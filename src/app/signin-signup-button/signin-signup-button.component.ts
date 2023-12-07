@@ -1,7 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { SigninComponent } from '../signin/signin.component';
 import { SignupComponent } from '../signup/signup.component';
-import { AppComponent, ModalManager } from '../app.component';
+import { ModalManager } from '../app.component';
 
 @Component({
   selector: 'app-signin-signup-button',
@@ -15,7 +15,7 @@ export class SigninSignupButtonComponent {
   constructor() {}
 
   openModal(modal: HTMLDialogElement): void {
-    ModalManager.openModal(modal)
+    ModalManager.openModal(modal);
   }
 
   closeModals() {

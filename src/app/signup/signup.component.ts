@@ -1,6 +1,5 @@
-import { Component, ComponentRef } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MembersService } from '../services/members.service';
-import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ModalManager } from '../app.component';
 
@@ -12,6 +11,7 @@ import { ModalManager } from '../app.component';
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
+  @Input() signinModal: HTMLDialogElement | undefined;
   username: string = "";
   email: string = "";
   password: string = "";
@@ -42,6 +42,9 @@ export class SignupComponent {
         this.username = "";
         this.email = "";
         ModalManager.closeModals();
+        if (this.signinModal != undefined) {
+          ModalManager.openModal(this.signinModal);
+        }
         //this.alertService.set("success", "Votre compte a été créé !", 3000);
         //this.signin();
       },

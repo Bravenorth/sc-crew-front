@@ -12,7 +12,7 @@
 
 <dialog #signupModal (click)="closeModals()">
   <div class="dialog-child" (click)="$event.stopPropagation()">
-    <app-signup></app-signup>
+    <app-signup [signinModal]="signinModal"></app-signup>
     <p>
       Already got account ? - 
     <a (click)="openModal(signinModal)">Sign in</a>
